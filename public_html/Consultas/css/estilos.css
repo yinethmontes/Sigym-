@@ -1,0 +1,148 @@
+/* ESTILOS */
+/*body {	
+	
+	background: ;
+	font-size: 62.5%;
+	margin:0px;
+	
+	
+}*/
+a img{
+ border:0px;
+}
+
+/*CSS ERROR JQUERY*/
+#form1 label.error{
+	display:block;	
+	font-size:10px;
+	color:#FF0000;
+	padding-bottom:5px;
+	font-weight:normal;
+	
+}
+#form1 input.error{
+	border:1px dotted #FF0000
+}
+
+
+/*CONTENEDOR PRINCIPAL*/
+#conte {
+	padding: 0.2em;	
+	margin:auto;
+	width:80%;	
+}
+#conte h3 { 
+	margin: 0; 
+	padding: 0.4em; 
+	text-align: center;
+	height:13px;
+	font-size:1em;	
+	/*font-weight:normal;	*/
+}
+
+/*Titulo principal de cada pagina*/
+h1.tit_cont {
+	background:transparent url(../images/note_edit.jpg) no-repeat scroll left ;	
+	padding-left:40px;
+	padding-top:10px;
+	font-size:18px;
+	border:none;
+	margin:10px;
+	height:30px;	
+}
+
+#tabla_form{
+	font-weight:bold;
+}
+
+
+
+/* CLASE PARA EL TAMAÑO DE LOS MENSAJES DE AVISO*/
+.mensajes{
+	margin: auto;
+	padding: 3px 3px 3px 3px;		
+	height:15px;
+	width:30%;	
+	
+}
+
+
+/*ESTILOS MENUS*/
+ul.topnav {
+	list-style: none;
+	padding: 0 20px;	
+	margin: 0;
+	/*float: left;*/
+	/* width: 920px; Ancho de la barra de menus*/ 
+	background: #222;
+	font-size: 1.2em;
+	background: url(../images/topnav_bg.jpg) repeat-x;
+	height:30px;
+	
+}
+ul.topnav li {
+	float: left;
+	margin: 0;	
+	padding: 0 15px 0 0;
+	position: relative; /*--Declare X and Y axis base--*/
+	height:30px;
+}
+ul.topnav li a{
+	padding: 8px;
+	color: #FFFFFF; /* Color de la Letra*/
+	display: block;
+	text-decoration: none;
+	float: left;
+	height:30px;
+}
+ul.topnav li a:hover{
+	background: url(../images/topnav_hover.jpg) no-repeat center top;
+}
+ul.topnav li span { /*--Drop down trigger styles--*/
+	width: 17px;
+	height: 30px;
+	float: left;
+	background: url(../images/subnav_btn.gif) no-repeat center top;
+}
+ul.topnav li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+ul.topnav li ul.subnav {
+	list-style: none;
+	position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+	left: 0; top: 30px;
+	background: #922192;
+	margin: 0; padding: 0;
+	display: none;
+	float: left;
+	width: 170px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border: 1px solid #CCCCCC;
+}
+ul.topnav li ul.subnav li{
+	margin: 0; padding: 0;
+	border-top: 1px solid #CCCCCC; /*--Create bevel effect--*/
+	border-bottom: 1px solid #CCCCCC; /*--Create bevel effect--*/
+	clear: both;
+	width: 170px;
+	z-index:10000;	
+}
+/*COLOR LIST MENU*/
+html ul.topnav li ul.subnav li a {
+	float: left;
+	width: 142px;
+	background: #0099FF url(../images/dropdown_linkbg.gif) no-repeat 10px center;
+	padding-left: 20px;
+	height:15px;
+}
+
+html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+	background: #0066FF url(../images/dropdown_linkbg.gif) no-repeat 10px center;
+	font-weight:bold;
+}
+/*CSS CALENDARIO JQUERY*/
+#calendar {
+	width: 480px;		
+	margin: 0 auto;
+	}

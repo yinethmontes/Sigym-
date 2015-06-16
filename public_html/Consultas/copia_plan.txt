@@ -1,0 +1,107 @@
+<?php
+include("includes/conexion.php");
+include("includes/func.php");
+include('encabezado.php');
+
+function imprimirCabecera($dia){
+		echo '<tr  class= "ui-jqgrid-titlebar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix">';
+    	echo '<th >'.$dia.'</th>';
+  		echo '</tr>';
+  		echo '<tr>';
+		echo '<td><div align="center">Ejercicio</div></td>';
+		echo '<td><div align="center">Maquina</div></td>';
+		echo '<td><div align="center">Series</div></td>';
+    	echo '<td><div align="center">Repeticiones</div></td>';
+    	echo '<td><div align="center">Tiempo</div></td>';
+  		echo '</tr>';
+}
+function imprimirColumna($fila){
+	echo '<tr id = 1 class= "ui-widget-content jqgrow" role ="row">';
+    echo "<td>".$fila['EJERCICIO']."</td>";
+	echo "<td>".$fila['MAQUINA']."</td>";
+	echo "<td>".$fila['SERIES']."</td>";
+	echo "<td>".$fila['REPETICIONES']."</td>";
+	echo '<td> 1 hora </td>';
+    echo '</tr>';
+}
+$db = new conectar();
+
+$identificacion =$_SESSION["ide"];
+$nomdeportista= $_SESSION["nombre"]. " ". $_SESSION["apellido"];
+echo $identificacion;
+echo "<br>";
+echo '<h2>'.$nomdeportista.'</h2>
+<p>';
+  
+  $query = "SELECT A.DEP_IDE AS IDENTIFICACION, DEP_NOM AS NOMBRES, DEP_APE AS APELLIDOS, B.PLE_IDE AS NUMERO_PLAN, B.PLE_FEI AS FECHA_INICIO, PLE_FEF AS FECHA_FINAL, C.DPE_DIA AS DIA, DPE_SER AS SERIES, DPE_REP AS REPETICIONES, D.EJE_NOM AS EJERCICIO, E.MAQ_NOM AS MAQUINA FROM DEPORTISTA A, PLANENTRENAMIENTO B,DETALLEPE C, EJERCICIO D, MAQUINA E
+  WHERE A.DEP_IDE = $identificacion AND
+  A.DEP_IDE = B.DEP_IDE AND
+  B.PLE_IDE = C.PLE_IDE AND
+  C.EJE_IDE = D.EJE_IDE AND
+  D.MAQ_IDE = E.MAQ_IDE ORDER BY DPE_DIA";
+  $consulta=$db->consulta($query);
+  $dia = 0;
+
+ 
+
+while($fila = mysql_fetch_assoc($consulta)){
+  if(1 == $fila['DIA']){
+    if($dia!= $fila['DIA']){
+	echo '<table width="50%" border="0" align="center" class="ui-widget-content">';
+		imprimirCabecera("Dia: Lunes");
+	}
+    imprimirColumna($fila);
+	$dia = $fila['DIA'];
+  } else if(2 == $fila['DIA']){
+    if($dia!= $fila['DIA']){
+	echo '</table>  <br>';
+	echo '<table width="50%" border="0" align="center" class="ui-widget-content">';
+		imprimirCabecera("Dia: Martes");
+	}
+    imprimirColumna($fila);
+	$dia = $fila['DIA'];
+  } else if(3 == $fila['DIA']){
+    if($dia!= $fila['DIA']){
+	echo '</table> <br>';
+	echo '<table width="50%" border="0" align="center" class="ui-widget-content">';
+		imprimirCabecera("Dia: Miercoles");
+	}
+    imprimirColumna($fila);
+	$dia = $fila['DIA'];
+  } else if(4 == $fila['DIA']){
+    if($dia!= $fila['DIA']){
+	echo '</table> <br>';
+	echo '<table width="50%" border="0" align="center" class="ui-widget-content">';
+		imprimirCabecera("Dia: Jueves");
+	}
+    imprimirColumna($fila);
+	$dia = $fila['DIA'];
+  } else if(5 == $fila['DIA']){
+    if($dia!= $fila['DIA']){
+	echo '</table> <br>';
+	echo '<table width="50%" border="0" align="center" class="ui-widget-content">';
+		imprimirCabecera("Dia: Viernes");
+	}
+    imprimirColumna($fila);
+	$dia = $fila['DIA'];
+  } else if(6 == $fila['DIA']){
+    if($dia!= $fila['DIA']){
+	echo '</table> <br>';
+	echo '<table width="50%" border="0" align="center" class="ui-widget-content">';
+		imprimirCabecera("Dia: Sabado");
+	}
+    imprimirColumna($fila);
+	$dia = $fila['DIA'];
+  } else if(7 == $fila['DIA']){
+    if($dia!= $fila['DIA']){
+	echo '</table> <br>';
+	echo '<table width="50%" border="1" align="center" class="ui-widget-content">';
+		imprimirCabecera("Dia: Domingo");
+	}
+    imprimirColumna($fila);
+	$dia = $fila['DIA'];
+  } 
+ }
+echo '</table>';
+?>
+<?php include("piedepagina.php") ?>

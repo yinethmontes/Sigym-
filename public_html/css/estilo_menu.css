@@ -1,0 +1,36 @@
+#panel {
+	background: #ECECED;
+	height: 50px;
+	display: none;
+}
+.slide {
+	margin: 0;
+	padding: 0 0 0 0px;
+	border-top: solid 10px #fff;
+	height: 40px;
+}
+.btn-slide {
+	float: left;
+	background: #fff url(arrow.gif) no-repeat right -50px;
+	text-align: center;
+	width: 200px;
+	height: 30px;
+	padding: 10px 10px 0 0;
+	margin: 0 auto;
+	-moz-border-radius-topleft border:2px solid #fff;
+	display: block;
+/*	font: 160%/100% Arial, Helvetica, sans-serif;*/
+	font: 18px Arial, Helvetica, sans-serif;
+	color: #14819D;
+	text-decoration:underline;
+	
+}
+.active {
+	background-position: right 12px;
+}
+ul.list {margin: 0px; padding: 16px 0px 0px 10px; list-style: none;}
+ul.list li {float: left; width: auto;}
+ul.list a {text-decoration: none; color: #ffffff; background: #14819D; margin: 5px; padding: 4px;}
+ul.list a:hover {text-decoration: none; background: #17335B;}
+ul.list li.buscar {float: right; margin-right: 5px;}
+ul.list li.buscar input {background-color: #453027; border: 0px; color: #CCC093; font-size: 18px; margin: 0px; width: 300px;}
