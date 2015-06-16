@@ -1,0 +1,30 @@
+Deportista al ingresar tiene acceso a:
+
+Ver o actualizar sus datos personales
+Ver su Plan de Entrenamiento
+Actualizar la Contraseña
+Ves las estadísticas del Ingreso al Gimnasio
+
+
+El administrador:
+
+Crear, actualizar, Eliminar:
+
+Facultades
+Programas
+
+Ejercicios
+Modalidades
+
+
+Tipos de deportista ???
+Observaciones
+
+Máquinas
+Tipos de máquina
+
+
+Crear y actualizar planes de entrenamiento
+
+
+Cambiar el estado de los deportistas

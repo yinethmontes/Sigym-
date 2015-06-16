@@ -1,0 +1,7 @@
+<chart caption="GRAFICO" 
+   xAxisName="Week" yAxisName="Amount" numberPrefix="$"> 
+      <set label=" 1" value="14400" /> 
+      <set label=" 2" value="19600" /> 
+      <set label=" 3" value="24000" /> 
+      <set label=" 4" value="15700" /> 
+</chart>

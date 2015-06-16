@@ -1,0 +1,666 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.0.1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generaci髇: 08-03-2010 a las 18:01:18
+-- Versi髇 del servidor: 5.1.36
+-- Versi髇 de PHP: 5.3.0
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Base de datos: `bdgimnasio`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `deportista`
+--
+
+CREATE TABLE IF NOT EXISTS `deportista` (
+  `DEP_IDE` varchar(15) NOT NULL,
+  `DEP_APE` varchar(40) NOT NULL,
+  `DEP_NOM` varchar(40) NOT NULL,
+  `DEP_SEX` enum('M','F') NOT NULL,
+  `DEP_FEN` date NOT NULL,
+  `DEP_EST` decimal(4,2) NOT NULL,
+  `DEP_PES` decimal(4,2) NOT NULL,
+  `DEP_GRS` varchar(3) NOT NULL,
+  `DEP_EMA` varchar(40) NOT NULL,
+  `DEP_CON` varchar(40) NOT NULL,
+  `DEP_DIR` varchar(50) NOT NULL,
+  `DEP_TEL` varchar(10) NOT NULL,
+  `DEP_CEL` varchar(12) NOT NULL,
+  `PRO_IDE` int(4) NOT NULL,
+  `TID_IDE` int(2) NOT NULL,
+  `DEP_ESD` int(2) NOT NULL,
+  `DEP_TIU` int(2) NOT NULL,
+  `DEP_FHR` datetime NOT NULL,
+  PRIMARY KEY (`DEP_IDE`),
+  KEY `DEPORTISTA_TIPODEPORTISTA` (`TID_IDE`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcar la base de datos para la tabla `deportista`
+--
+
+INSERT INTO `deportista` (`DEP_IDE`, `DEP_APE`, `DEP_NOM`, `DEP_SEX`, `DEP_FEN`, `DEP_EST`, `DEP_PES`, `DEP_GRS`, `DEP_EMA`, `DEP_CON`, `DEP_DIR`, `DEP_TEL`, `DEP_CEL`, `PRO_IDE`, `TID_IDE`, `DEP_ESD`, `DEP_TIU`, `DEP_FHR`) VALUES
+('93378156', 'GUARIN', 'NELSON', 'M', '1969-09-25', '99.99', '84.00', 'O+', 'nguarin@gmail.com', '9140d6cde2c74313da35842720cde88b', 'CALLE 10', '2783743', '3164640520', 1, 2, 0, 1, '2010-02-15 15:20:32'),
+('1110476412', 'Macias montero', 'Esnes', 'F', '2009-07-26', '1.51', '70.00', 'A+', 'esney7@hotmail.com', 'ce58e9302ce21a9be2e4530bd7b3dddf24e7e7b0', 'Avenida ambala 62 -38 portal de medina', '2752636', '3017810834', 18, 1, 0, 0, '2010-02-17 16:27:38'),
+('1110513015', 'Murillo Acosta', 'Ingrid Julieth', 'F', '1991-07-12', '1.53', '42.00', 'B+', 'jingrid.9112@hotmaail.com', 'ce58e9302ce21a9be2e4530bd7b3dddf24e7e7b0', 'carrera 36 sur numero 20-95 boqueron', '2607580', '3108982184', 9, 2, 0, 0, '2010-02-17 16:35:41'),
+('1110511266', 'Rubiano Medina', 'Angelica Maria', 'F', '1991-05-26', '1.63', '49.00', 'A+', 'anmed26@hotmail.com', 'ce58e9302ce21a9be2e4530bd7b3dddf24e7e7b0', 'Cra 12 # 14-37 B/ Ancon', '', '3132785060', 1, 2, 0, 0, '2010-02-17 17:21:54'),
+('93138693', 'huertas', 'oscar', 'M', '2010-02-01', '1.00', '2.00', 'O+', 'oshunu@gmail.com', '202cb962ac59075b964b07152d234b70', 'dire', '', '317777', 1, 1, 0, 0, '2010-02-18 19:18:10'),
+('1110510448', 'PATI脩O DELGADO', 'PABLO EMILIO', 'M', '1991-05-05', '99.99', '65.00', 'O+', 'pepatinod@misena.edu.co', '20f4c8fe7ba41be84ffd4030df4f2a6d', 'CALLE 68 23-41', '2750534', '3115450848', 1, 1, 0, 2, '2010-02-26 13:52:55'),
+('1110503133', 'GIRALDO GUTIERREZ', 'CESAR', 'M', '1990-10-25', '99.99', '63.00', 'A+', 'cemagiraldo@misena.edu.co', '139a94fd02d353b9b8a23a23067cd4fb', 'MZ 26 CASA 16', '2748236', '3003777554', 1, 1, 0, 2, '2010-02-26 15:14:44'),
+('123456', 'PEREZ', 'PEPITO', 'M', '1939-03-13', '99.99', '42.00', 'O+', 'pepitoperez@gmail.com', 'ed1d856dcb0c51ea82ebc896ab01e53d', 'CALLE 68 23-41', '2222', '3543546565', 19, 1, 0, 2, '2010-03-04 20:44:03'),
+('8', '6', '6', 'M', '2010-03-16', '6.00', '6.00', 'O+', 'pepitoperez@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '8', '7', 'ud', 1, 3, 0, 2, '2010-03-04 20:51:38'),
+('12211221', 'SDFFVFVFVF', 'DDREDDERTY', 'M', '2010-03-22', '99.99', '2.00', 'O+', 'pepitoperez@gmail.com', '82eb39c65c8451de26c08530f1cc42d0', 'CALLE 68 23-41', '43432', '3115450848', 19, 1, 0, 2, '2010-03-04 20:53:50');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detallepe`
+--
+
+CREATE TABLE IF NOT EXISTS `detallepe` (
+  `DET_IDE` int(11) NOT NULL AUTO_INCREMENT,
+  `PLE_IDE` int(10) NOT NULL,
+  `EJE_IDE` int(4) NOT NULL,
+  `DPE_DIA` int(1) NOT NULL,
+  `DPE_SER` int(4) NOT NULL,
+  `DPE_REP` int(4) NOT NULL,
+  `DPE_TIE` varchar(20) NOT NULL,
+  PRIMARY KEY (`DET_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
+
+--
+-- Volcar la base de datos para la tabla `detallepe`
+--
+
+INSERT INTO `detallepe` (`DET_IDE`, `PLE_IDE`, `EJE_IDE`, `DPE_DIA`, `DPE_SER`, `DPE_REP`, `DPE_TIE`) VALUES
+(1, 1, 1, 2, 4, 5, '10 min'),
+(2, 1, 4, 1, 5, 4, ''),
+(3, 1, 6, 1, 4, 4, ''),
+(4, 1, 1, 3, 7, 8, '9'),
+(5, 1, 206, 7, 5, 6, '7'),
+(6, 2, 4, 6, 4, 5, '6'),
+(7, 2, 8, 7, 4, 5, '6'),
+(8, 2, 5, 5, 1, 2, '3'),
+(9, 2, 5, 5, 1, 2, '3'),
+(24, 6, 10, 1, 4, 10, ''),
+(11, 2, 3, 1, 3, 4, '5'),
+(25, 6, 144, 1, 4, 8, ''),
+(13, 2, 2, 2, 1, 2, '1'),
+(14, 2, 2, 3, 3, 4, '5'),
+(15, 2, 10, 4, 3, 4, '5'),
+(23, 2, 11, 6, 312, 123, '123'),
+(17, 2, 2, 3, 3, 4, '5'),
+(18, 2, 11, 3, 3, 4, '5'),
+(19, 2, 13, 4, 2, 3, '4'),
+(20, 2, 0, 4, 2, 3, '4'),
+(21, 2, 10, 1, 2, 4, '7'),
+(26, 6, 4, 1, 4, 5, ''),
+(27, 6, 68, 2, 4, 8, ''),
+(28, 6, 16, 2, 4, 6, ''),
+(29, 6, 203, 2, 4, 6, ''),
+(30, 6, 200, 3, 5, 6, ''),
+(31, 6, 178, 3, 4, 5, ''),
+(32, 6, 70, 3, 4, 6, ''),
+(33, 6, 5, 4, 5, 8, ''),
+(34, 6, 18, 4, 5, 6, ''),
+(35, 6, 196, 4, 7, 4, ''),
+(36, 6, 9, 5, 5, 6, ''),
+(37, 6, 185, 5, 6, 12, ''),
+(38, 6, 18, 5, 4, 7, ''),
+(39, 6, 15, 6, 6, 6, ''),
+(40, 6, 201, 6, 4, 7, ''),
+(41, 6, 196, 6, 5, 4, ''),
+(42, 7, 7, 1, 5, 8, ''),
+(43, 7, 13, 1, 5, 6, ''),
+(45, 7, 5, 1, 4, 6, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ejercicio`
+--
+
+CREATE TABLE IF NOT EXISTS `ejercicio` (
+  `EJE_IDE` int(4) NOT NULL AUTO_INCREMENT,
+  `EJE_NOM` varchar(50) NOT NULL,
+  `EJE_DES` varchar(100) NOT NULL,
+  `EJE_FOT` varchar(30) NOT NULL,
+  `MAQ_IDE` int(4) NOT NULL,
+  `MOD_IDE` int(4) NOT NULL,
+  PRIMARY KEY (`EJE_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=209 ;
+
+--
+-- Volcar la base de datos para la tabla `ejercicio`
+--
+
+INSERT INTO `ejercicio` (`EJE_IDE`, `EJE_NOM`, `EJE_DES`, `EJE_FOT`, `MAQ_IDE`, `MOD_IDE`) VALUES
+(1, 'ELEVACIONES LATERALES', 'SIRVE PARA EL AUMENTO DE PESO', '', 3, 3),
+(2, 'ELEVACIONES POSTERIORES', 'SIRVE PARA EL AUMENTO DEL PESO', '', 4, 3),
+(3, 'PRESS MANCUERNA HOMBRO', 'SIRVE PARA EL AUMENTO DEL PESO', '', 4, 3),
+(4, 'REMO DE PIE', 'SIRVE PARA EL AUMENTO DEL PESO', '', 5, 3),
+(5, 'ENCOJIMIENTO HOMBRO BARRA', 'SIRVE PARA EL AUMENTO DEL PESO', '', 5, 3),
+(6, 'PRESS BANCO AGARRE ESTRECHO', 'SIRVE PARA EL AUMENTO DEL PESO', '', 4, 3),
+(7, 'EXTENCION POLEA BARRA RECTA', 'SIRVE PARA EL AUMENTO DEL PESO', '', 3, 3),
+(8, 'EXTENCION MANCUERNA 2 BRAZOS', 'SIRVE PARA EL AUMENTO DEL PESO', '', 3, 3),
+(9, 'EXTENCION PIERNAS', 'SIRVE PARA EL AUMENTO DEL PESO', '', 2, 3),
+(10, 'SENTADILLA', 'SIRVE PARA EL AUMENTO DEL PESO', '', 8, 3),
+(11, 'PRENSA', 'SIRVE PARA EL AUMENTO DEL PESO', '', 2, 3),
+(12, 'ELEVACIONES TALONES', 'SIRVE PARA EL AUMENTO DEL PESO', '', 2, 3),
+(13, 'GEMELOS', 'SIRVE PARA EL AUMENTO DEL PESO', '', 8, 3),
+(14, 'PRESS BACO PLANO', 'SIRVE PARA EL AUMENTO DEL PESO', '', 2, 3),
+(15, 'PRESS BANCO INCLINADO', 'SIRVE PARA EL AUMENTO DEL PESO', '', 2, 3),
+(16, 'PRESS DECLINADO MANCUERNA', 'SIRVE PARA EL AUMENTO DEL PESO', '', 8, 3),
+(17, 'PULL OVER MANCUERNA', 'SIRVE PARA EL AUMENTO DEL PESO', '', 2, 3),
+(18, 'ELEVACIONES PIERNAS', 'SIRVE PARA EL AUMENTO DEL PESO', '', 8, 3),
+(19, 'ENCOJIMIENTO TRONCO', 'SIRVE PARA EL AUMENTO DEL PESO', '', 2, 3),
+(20, 'JALON POLEA POR DELANTE', 'SIRVE PARA EL AUMENTO DEL PESO', '', 3, 3),
+(21, 'REMO INCLINADO BARRA', 'SIRVE PARA EL AUMENTO DEL PESO', '', 5, 3),
+(22, 'PESO MUERTO PIERNA DOBLADA', 'SIRVE PARA EL AUMENTO DEL PESO', '', 7, 3),
+(23, 'CURL BICEPS MANCUERNA', 'SIRVE PARA EL AUMENTO DEL PESO', '', 4, 3),
+(24, 'CURL BICEPS PREDICADOR', 'SIRVE PARA EL AUMENTO DEL PESO', '', 4, 3),
+(25, 'LEG CURL FEMORAL', 'SIRVE PARA EL AUMENTO DEL PESO', '', 2, 3),
+(26, 'GEMELO', 'SIRVE PARA EL AUMENTO DEL PESO', '', 8, 3),
+(27, 'ELEVACION TALONES SENTADOS', 'SIRVE PARA EL AUMENTO DEL PESO', '', 8, 3),
+(28, 'PRESS BANCO PLANO MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 5, 3),
+(29, 'APERTONES BANCO PLANO', 'SIRVE PARA EL AUMENTO DE PESO', '', 9, 3),
+(30, 'PRESS HOMBRO MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 4, 3),
+(31, 'ELEVACIONES FRONTALES', 'SIRVE PARA EL AUMENTO DE PESO', '', 9, 3),
+(32, 'TRICEP COPA', 'SIRVE PARA EL AUMENTO DE PESO', '', 3, 3),
+(33, 'ABDOMINALES CIRCUITO', 'SIRVE PARA EL AUMENTO DE PESO', '', 6, 3),
+(34, 'SENTADILLA BARRA O MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(35, 'TIJERAS MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 2, 3),
+(36, 'FLEXION FEMORAL', 'SIRVE PARA EL AUMENTO DE PESO', '', 2, 3),
+(37, 'GLUTEOS COLCHONETA', 'SIRVE PARA EL AUMENTO DE PESO', '', 7, 3),
+(38, 'EXTENCION CUADRICEPS', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(39, 'ABDUCTORES', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(40, 'GEMELO', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(41, 'JALON POLEA POR DELANTE', 'SIRVE PARA EL AUMENTO DE PESO', '', 3, 3),
+(42, 'REMO POLEA', 'SIRVE PARA EL AUMENTO DE PESO', '', 3, 3),
+(43, 'REMO LATERAL MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 5, 3),
+(44, 'HIPEREXTENCIONES BANCO ROMANO', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(45, 'CURL BICEPS  BARRA', 'SIRVE PARA EL AUMENTO DE PESO', '', 4, 3),
+(46, 'CURL BICEPS  MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 5, 3),
+(47, 'CIRCUITO ABDOMINAL BANCO ROMANO', 'SIRVE PARA EL AUMENTO DE PESO', '', 6, 3),
+(48, 'SENTADILLA BARRA O MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 2, 3),
+(49, 'TIJERAS MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(50, 'FLEXION FEMORAL', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(51, 'EXTENCION CUADRICEPS', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(52, 'GLUTEOS COLCHONETA', 'SIRVE PARA EL AUMENTO DE PESO', '', 7, 3),
+(53, 'ABDUCTORES', 'SIRVE PARA EL AUMENTO DE PESO', '', 2, 3),
+(54, 'GEMELO', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(55, 'ENCIMA DE LA POLEA', 'SIRVE PARA EL AUMENTO DE PESO', '', 3, 3),
+(56, 'FLEXIONES ENTRE BANCOS', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(57, 'PATADAS CON MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 7, 3),
+(58, 'SENTADILLA FRONTAL PRENSA', 'SIRVE PARA EL AUMENTO DE PESO', '', 2, 3),
+(59, 'SENTADILLA SISY', 'SIRVE PARA EL AUMENTO DE PESO', '', 2, 3),
+(60, 'ZANCADA CON MANCUERNA', 'SIRVE PARA EL AUMENTO DE PESO', '', 2, 3),
+(61, 'ENCOGIMIENTO CON BALON MEDICINAL', 'SIRVE PARA EL AUMENTO DE PESO', '', 5, 3),
+(62, 'ELEVACIONES DE RODILLAS', 'SIRVE PARA EL AUMENTO DE PESO', '', 8, 3),
+(63, 'PRESS BANCO PLANO ', 'SIRVE PARA REDUCCION DE PESO', '', 4, 2),
+(64, 'EXTENCION CUADRICEPS', 'SIRVE PARA REDUCCION DE PESO', '', 8, 2),
+(65, 'JALON POLEA POR DETRAS', 'SIRVE PARA REDUCCION DE PESO', '', 8, 2),
+(66, 'FLEXION FEMORAL', 'SIRVE PARA REDUCCION DE PESO', '', 8, 2),
+(67, 'PRESS HOMBRO MANCUERNA', 'SIRVE PARA REDUCCION DE PESO', '', 5, 2),
+(68, 'TRICEP COPA', 'SIRVE PARA REDUCCION DE PESO', '', 8, 2),
+(69, 'GLUTEOS MAQUINA', 'SIRVE PARA REDUCCION DE PESO', '', 7, 2),
+(70, 'ABDUCTORES', 'SIRVE PARA REDUCCION DE PESO', '', 8, 2),
+(71, 'SENTADILLA', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(72, 'PRESS INCLINADO CON MANCUERNA', 'SIRVE PARA REDUCCION DE PESO', '', 4, 2),
+(73, 'PRESS BANCO MULTIPOWER', 'SIRVE PARA REDUCCION DE PESO', '', 8, 2),
+(74, 'APERTURAS EN BANCO PLANO', 'SIRVE PARA REDUCCION DE PESO', '', 5, 2),
+(75, 'DOBLE ENCOGIMIENTO', 'SIRVE PARA REDUCCION DE PESO', '', 6, 2),
+(76, 'ENCOGIMIENTO EN POLEA', 'SIRVE PARA REDUCCION DE PESO', '', 9, 2),
+(77, 'DOMINADOS', 'SIRVE PARA REDUCCION DE PESO', '', 1, 2),
+(78, 'JALON POLEA AGARRE INVERTIDO', 'SIRVE PARA REDUCCION DE PESO', '', 3, 2),
+(79, 'REMO CON BARRA', 'SIRVE PARA REDUCCION DE PESO', '', 3, 2),
+(80, 'REMO A UNA MANO', 'SIRVE PARA REDUCCION DE PESO', '', 3, 2),
+(81, 'ELEVACIONES DE TALONES PIE', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(82, 'ELEVACIONES DE TALONES SENTADO', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(83, 'CURL DE BRAZOS CON MANCUERNA', 'SIRVE PARA REDUCCION DE PESO', '', 5, 2),
+(84, 'CURL DE BRAZOS EN BANCO INCLINADO', 'SIRVE PARA REDUCCION DE PESO', '', 5, 2),
+(85, 'CURL DE BRAZOS AGARRE INVERTIDO', 'SIRVE PARA REDUCCION DE PESO', '', 5, 2),
+(86, 'EXTENCION DE TRICEPS BARRA Z', 'SIRVE PARA REDUCCION DE PESO', '', 8, 2),
+(87, 'GLUTEOS MAQUINA', 'SIRVE PARA REDUCCION DE PESO', '', 7, 2),
+(88, 'EXTENCION CUADRICEPS', 'SIRVE PARA REDUCCION DE PESO', '', 8, 2),
+(89, 'GLUTEOS COLCHONETA', 'SIRVE PARA REDUCCION DE PESO', '', 7, 2),
+(90, 'FLEXION FEMORAL', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(91, 'ABDOMINALES COLCHONETAS', 'SIRVE PARA REDUCCION DE PESO', '', 3, 2),
+(92, 'ABDUCTORES', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(93, 'PRESS BANCO PLANO ', 'SIRVE PARA REDUCCION DE PESO', '', 4, 2),
+(94, 'EXTENCION CUADRICEPS', 'SIRVE PARA REDUCCION DE PESO', '', 5, 2),
+(95, 'GLUTEOS COLCHONETA', 'SIRVE PARA REDUCCION DE PESO', '', 7, 2),
+(96, 'JALON POLEA POR DETRAS', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(97, 'FLEXION FEMORAL', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(98, 'PRESS HOMBRO MANCUERNA', 'SIRVE PARA REDUCCION DE PESO', '', 4, 2),
+(99, 'TRICEP COPA', 'SIRVE PARA REDUCCION DE PESO', '', 3, 2),
+(100, 'GLUTEOS MAQUINA', 'SIRVE PARA REDUCCION DE PESO', '', 7, 2),
+(101, 'ABDUCTORES', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(102, 'SENTADILLA', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(103, 'GLUTEOS MAQUINA', 'SIRVE PARA REDUCCION DE PESO', '', 7, 2),
+(104, 'EXTENCION CUADRICEPS', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(105, 'GLUTEOS COLCHONETA', 'SIRVE PARA REDUCCION DE PESO', '', 7, 2),
+(106, 'FLEXION FEMORAL', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(107, 'ABDOMINALES COLCHONETAS', 'SIRVE PARA REDUCCION DE PESO', '', 6, 2),
+(108, 'ABDUCTORES', 'SIRVE PARA REDUCCION DE PESO', '', 2, 2),
+(109, 'PRESS BANCO PLANO ', 'SIRVE PARA REDUCCION DE PESO', '', 4, 2),
+(110, 'APERTURAS PLANOS', 'SIRVE PARA REDUCCION DE PESO', '', 8, 2),
+(111, 'PRESS INCLINADO', 'SIRVE PARA REDUCCION DE PESO', '', 9, 2),
+(112, 'PEK DEK', 'SIRVE PARA REDUCCION DE PESO', '', 4, 2),
+(113, 'PULL OVER', 'SIRVE PARA REDUCCION DE PESO', '', 6, 2),
+(114, 'PRESS SENTADO MANCUERNA', 'SIRVE PARA REDUCCION DE PESO', '', 4, 2),
+(115, 'TRAPECIO BARRA', 'SIRVE PARA REDUCCION DE PESO', '', 5, 2),
+(116, 'ELEVACIONES FRONTALES', 'SIRVE PARA REDUCCION DE PESO', '', 4, 2),
+(117, 'EXTENCION CUADRICEPS', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 8, 4),
+(118, 'PESO MUERTO', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 5, 4),
+(119, 'CURL FEMORAL', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 8, 4),
+(120, 'HAKA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 2, 4),
+(121, 'ELEVACIONES GEMELOS SENTADO', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 8, 4),
+(122, 'GEMELOS DE PIE', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 8, 4),
+(123, 'CURL BICEP INTERNO', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 8, 4),
+(124, 'EXTENCION POLEA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 3, 4),
+(125, 'CURL BARRA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 4, 4),
+(126, 'PRESS FRANCES', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 5, 4),
+(127, 'CURL POLEA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 3, 4),
+(128, 'EXTENCIONES INVERTIDAS', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 5, 4),
+(129, 'JALON POLEA INVERTIDA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 3, 4),
+(130, 'REMO POLEA SENTADO', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 3, 4),
+(131, 'REMO MANCUERNA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 3, 4),
+(132, 'REMO BARRA T', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 3, 4),
+(133, 'JALON POLEA POR DETRAS', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 3, 4),
+(134, 'REMO INCLINADO BARRA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 3, 4),
+(135, 'SENTADILLA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 2, 4),
+(136, 'GLUTEOS MAQUINA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 7, 4),
+(137, 'CUADRICEP', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 8, 4),
+(138, 'GLUTEOS COLCHONETA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 7, 4),
+(139, 'FEMORALES', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 2, 4),
+(140, 'ABDUCTORES', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 8, 4),
+(141, 'PRESS BANCO PLANO MANCUERNA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 5, 4),
+(142, 'APERTONES BANCO PLANO', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 5, 4),
+(143, 'PULL OVER MANCUERNA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 3, 4),
+(144, 'PRESS HOMBRO MANCUERNA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 4, 4),
+(145, 'ELEVACIONES LATERALES', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 4, 4),
+(146, 'ELEVACIONES FRONTALES', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 4, 4),
+(147, 'TRICEP COPA', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 2, 4),
+(148, 'ABDOMINALES CIRCUITO', 'SIRVE PARA EL MANTENIMIENTO FISICO ', '', 6, 4),
+(149, 'PRESS DECLINADO BARRA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 4, 1),
+(150, 'PRESS INCLINADO  MANCUERNA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 4, 1),
+(151, 'APERTURAS PLANAS', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 5, 1),
+(152, 'CURL MANCUERNAS ALTERNO', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 3, 1),
+(153, 'CURL CONCENTRADO', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 3, 1),
+(154, 'CURL BICEPS PREDICADOR POLEA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 3, 1),
+(155, 'FLEXION MU袳CA ANTEBRAZO', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 8, 1),
+(156, 'FLEXION MU袳CA INVERTIDA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 8, 1),
+(157, 'SENTADILLA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 2, 1),
+(158, 'HAKA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 2, 1),
+(159, 'EXTENCION CUADRICEPS', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 2, 1),
+(160, 'FLEXION FEMORAL', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 2, 1),
+(161, 'GEMELOS PRENSA\r\n', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 2, 1),
+(162, 'GEMELOS HOKA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 2, 1),
+(163, 'ABDOMINALES EN BANCO', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 6, 1),
+(164, 'PRESS HOMBRO MANCUERNA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 5, 1),
+(165, 'ELEVACIONES LATERALES', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 8, 1),
+(166, 'ELEVACIONES FRONTALES', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 8, 1),
+(167, 'REMO TRAPECIO', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 4, 1),
+(168, 'PRESS FRANCES TRICEPS SENTADO', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 8, 1),
+(169, 'EXTENCION TRICEP POLEA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 3, 1),
+(170, 'ABDOMINALES TABLA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 6, 1),
+(171, 'REMO BARRA INVERTIDO', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 4, 1),
+(172, 'JALON CERRADO AL PECHO', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 9, 1),
+(173, 'REMO LATERAL', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 3, 1),
+(174, 'PRESS MUERTO LUMBARES', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 4, 1),
+(175, 'FLEXION FEMORAL', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 2, 1),
+(176, 'FLEXION FEMORAL DE PIE', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 2, 1),
+(177, 'GEMELOS PRENSA', 'EL FISICULTURISMO SIRVE PARA TONIFICAR LAS PARTES DEL CUERPO', '', 8, 1),
+(178, 'PRESS DECLINADO BARRA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 4, 5),
+(179, 'PRESS INCLINADO  MANCUERNA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 4, 5),
+(180, 'APERTURAS PLANAS', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 3, 5),
+(181, 'CURL MANCUERNAS ALTERNO', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 3, 5),
+(182, 'CURL CONCENTRADO', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 3, 5),
+(183, 'CURL BICEPS PREDICADOR POLEA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 3, 5),
+(184, 'FLEXION MU袳CA ANTEBRAZO', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 8, 5),
+(185, 'FLEXION MU袳CA INVERTIDA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 8, 5),
+(186, 'SENTADILLA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 2, 5),
+(187, 'HAKA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 2, 5),
+(188, 'EXTENCION CUADRICEPS', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 8, 5),
+(189, 'FLEXION FEMORAL', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 2, 5),
+(190, 'GEMELOS PRENSA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 8, 5),
+(191, 'GEMELOS HOKA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 8, 5),
+(192, 'ABDOMINALES EN BANCO', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 6, 5),
+(193, 'PRESS HOMBRO MANCUERNA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 4, 5),
+(194, 'ELEVACIONES LATERALES', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 5, 5),
+(195, 'ELEVACIONES FRONTALES', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 5, 5),
+(196, 'REMO TRAPECIO', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 4, 5),
+(197, 'PRESS FRANCES TRICEPS SENTADO', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 8, 5),
+(198, 'EXTENCION TRICEP POLEA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 8, 5),
+(199, 'ABDOMINALES TABLA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 6, 5),
+(200, 'REMO BARRA INVERTIDO', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 5, 5),
+(201, 'JALON CERRADO AL PECHO', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 9, 5),
+(202, 'REMO LATERAL', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 5, 5),
+(203, 'PESO MUERTO LUMBARES', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 4, 5),
+(204, 'FLEXION FEMORAL', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 2, 5),
+(205, 'FLEXION FEMORAL DE PIE', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 8, 5),
+(206, 'GEMELOS PRENSA', 'LA RECUPERACION FISICA SIRVE PARA TENER EN CUENTA LOS LIQUIDOS QUE SE GENERA DE UN ENTRENAMIENTO.', '', 2, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `facultad`
+--
+
+CREATE TABLE IF NOT EXISTS `facultad` (
+  `FAC_IDE` int(4) NOT NULL AUTO_INCREMENT,
+  `FAC_NOM` varchar(50) NOT NULL,
+  PRIMARY KEY (`FAC_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Volcar la base de datos para la tabla `facultad`
+--
+
+INSERT INTO `facultad` (`FAC_IDE`, `FAC_NOM`) VALUES
+(1, 'INGENIERIA'),
+(2, 'CIENCIAS ECONOMICAS Y ADMINISTRATIVAS'),
+(3, 'DERECHO Y CIENCIA'),
+(4, 'HUMANIDADES Y CIENCIAS SOCIALES'),
+(5, 'ARTES INTEGRADAS'),
+(6, 'CIENCIAS NATURALES Y MATEMATICAS');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ingreso`
+--
+
+CREATE TABLE IF NOT EXISTS `ingreso` (
+  `ING_NUM` bigint(10) NOT NULL AUTO_INCREMENT,
+  `ING_FHI` datetime NOT NULL,
+  `ING_FHS` datetime NOT NULL,
+  `DEP_IDE` varchar(15) NOT NULL,
+  PRIMARY KEY (`ING_NUM`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Volcar la base de datos para la tabla `ingreso`
+--
+
+INSERT INTO `ingreso` (`ING_NUM`, `ING_FHI`, `ING_FHS`, `DEP_IDE`) VALUES
+(1, '2010-02-17 16:18:52', '2010-02-17 17:32:12', '93378156'),
+(2, '2010-02-17 16:31:59', '2010-02-17 16:39:31', '1110476412'),
+(3, '2010-02-17 16:36:55', '2010-02-17 16:44:33', '1110513015'),
+(4, '2010-02-17 16:45:36', '2010-02-17 17:32:12', '93378156'),
+(5, '2010-02-17 17:29:33', '2010-02-17 17:34:39', '1110511266'),
+(6, '2010-03-05 14:40:15', '0000-00-00 00:00:00', '93378156');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `maquina`
+--
+
+CREATE TABLE IF NOT EXISTS `maquina` (
+  `MAQ_IDE` int(4) NOT NULL AUTO_INCREMENT,
+  `MAQ_NOM` varchar(50) NOT NULL,
+  `MAQ_DES` varchar(100) NOT NULL,
+  `TIM_IDE` int(4) NOT NULL,
+  PRIMARY KEY (`MAQ_IDE`),
+  KEY `MAQUINA_TIPOMAQUINA` (`TIM_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+
+--
+-- Volcar la base de datos para la tabla `maquina`
+--
+
+INSERT INTO `maquina` (`MAQ_IDE`, `MAQ_NOM`, `MAQ_DES`, `TIM_IDE`) VALUES
+(1, 'Eliptica', 'Sirve para eliminar grasa de estomago y muslos', 1),
+(2, 'Bicicletas Spinning', 'nos contribuye al cuidado  de las piernas , caderas, ayuda a la perdida de peso,reduce la celulitis.', 1),
+(3, 'Trotadora', 'es bueno para el  sistema cardiovascular, ayuda a quemar calorias, fortalece las piernas y es bueno ', 1),
+(4, 'Cable Cross Over', '', 2),
+(5, 'Smith Multiestacion', 'Estas m醧uinas te permitir醤 ejercitar todos los m鷖culos del cuerpo', 2),
+(6, 'Soporte Sentadilla', '', 3),
+(7, 'Abductor', 'sirve para aumentar cadera y pierna en conjunto.', 3),
+(8, 'Hacka', 'su finalidad es  el desarrollo en conjunto de los musculos de las piernas y gemelos', 3),
+(9, 'Leg Curl', 'Desarrolla el b韈eps femoral de la pierna. El asiento toma doble posici髇 髎ea en forma de joroba.', 3),
+(10, 'Smith ', 'con 8 ganchos de seguridad para seleccionar la altura de cada persona para ejecutar las sentadillas ', 3),
+(11, 'Leg Extencion ', 'Desarrolla los cuadriceps de la pierna.', 3),
+(12, 'Pec Deck', 'Maquina que se usa como contractor del m鷖culo pectoral.', 4),
+(13, 'Press Frontal', 'sirve para aumentar la masa muscular, tonificar y marcar', 4),
+(14, 'press Plano', ' sirve para  trabajar el pectoral mayor, del pectoral menor y en menor medida de los tr韈eps.', 4),
+(15, 'Press Declinado', 'sirve para el pectoral alto.', 4),
+(16, 'Banco De Hombro', 'sirve para la tonificacion muscular del musculo deltoides en sus tres porciones: anterior, lateral.', 5),
+(17, 'Press Hombro', '', 5),
+(18, 'Banco Abdominal', 'Banco para la tonificaci髇 de la musculatura abdominal, b醩icamente el recto del abdomen y los obl韈', 6),
+(19, 'Banco fijo', '', 6),
+(20, 'Elevaciones De Pierna', 'sirve para trabajar principalmente la zona inferior de los m鷖culos abdominales.', 6),
+(21, 'Barra De Discos', '', 7),
+(22, 'Soporte De Discos', '', 7),
+(23, 'Soporte De Mancuernas', '', 7),
+(24, 'Dos Bases De Mancuerna', '', 7),
+(25, 'Soporte Fijo', '', 7),
+(26, 'Soporte Para Mancuerna', '', 7),
+(30, 'aaas', 'xxxx', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modalidad`
+--
+
+CREATE TABLE IF NOT EXISTS `modalidad` (
+  `MOD_IDE` int(4) NOT NULL AUTO_INCREMENT,
+  `MOD_NOM` varchar(50) NOT NULL,
+  `MOD_DES` text NOT NULL,
+  PRIMARY KEY (`MOD_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Volcar la base de datos para la tabla `modalidad`
+--
+
+INSERT INTO `modalidad` (`MOD_IDE`, `MOD_NOM`, `MOD_DES`) VALUES
+(1, 'AUMENTO DE PESO', 'Consiste en cambios en la secuencia de los ejercicios . Y sugerencias de c贸mo se debe alimentar para lograr el incremento  de la masa muscular'),
+(2, 'Reduccion de Peso', ''),
+(3, 'Mantenimiento F韘ico', 'Sistema de trabajo muscular menos riguroso, con la variante de que la persona solo busca mantener su estado fisico actual.'),
+(4, 'Recuperacion Fisica', 'Trata de aliviar o recuperar dolencias fisicas  como las lesiones de tipo articular y muscular por medio de una guia de ejercicios terapeuticos.'),
+(5, 'Fisiculturismo', 'Sistema de trabajo con pesas para adquirir volumen y masa corporal por medio de ejercicios .');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `observacion`
+--
+
+CREATE TABLE IF NOT EXISTS `observacion` (
+  `OBS_NUM` int(4) NOT NULL AUTO_INCREMENT,
+  `OBS_NOM` varchar(50) NOT NULL,
+  `OBS_DES` varchar(200) NOT NULL,
+  PRIMARY KEY (`OBS_NUM`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Volcar la base de datos para la tabla `observacion`
+--
+
+INSERT INTO `observacion` (`OBS_NUM`, `OBS_NOM`, `OBS_DES`) VALUES
+(1, 'DISCAPACIDAD', 'Personas con alg煤n impedimento f铆sico'),
+(2, 'INSUFICIENCIA CARDIACA', 'Personas que 麓padecen s铆ndrome fisiopatol贸gico, que resulta de cualquier trastorno, bien sea estructural o funcional del coraz贸n'),
+(3, 'HIPERTENSION', 'Personas con condici贸n m茅dica caracterizada por un incremento continuo de las cifras de presi贸n arterial por encima de 139/89 mmHg'),
+(4, 'LESIONES ', 'Personas con lesiones musculares 贸 articulares'),
+(5, 'CIRUGIAS', 'Cirugias practicadas al deportista'),
+(6, 'HERNIAS', 'Cualquier tipo de Hernia que presente el deportista'),
+(7, 'PROBLEMAS POSTURALES O DE COLUMNA', 'Inconvenientes que puda presentar el deportista en su postura  o en su columna');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ordenmto`
+--
+
+CREATE TABLE IF NOT EXISTS `ordenmto` (
+  `ORM_NUM` bigint(10) NOT NULL AUTO_INCREMENT,
+  `TIM_IDE` int(2) NOT NULL,
+  `ORM_FEC` date NOT NULL,
+  `ORM_OBS` varchar(150) NOT NULL,
+  `MAQ_IDE` int(4) NOT NULL,
+  PRIMARY KEY (`ORM_NUM`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Volcar la base de datos para la tabla `ordenmto`
+--
+
+INSERT INTO `ordenmto` (`ORM_NUM`, `TIM_IDE`, `ORM_FEC`, `ORM_OBS`, `MAQ_IDE`) VALUES
+(1, 1, '2010-02-10', 'sadsafssssss\r\n', 3),
+(2, 1, '2010-02-21', '1111', 3),
+(3, 2, '2010-02-27', '', 14),
+(4, 1, '2010-02-21', '1111', 3),
+(5, 3, '2010-02-09', 'sdfsdafa', 3),
+(7, 2, '2010-02-10', 'SDFDSDSDDF', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `planentrenamiento`
+--
+
+CREATE TABLE IF NOT EXISTS `planentrenamiento` (
+  `PLE_IDE` int(10) NOT NULL AUTO_INCREMENT,
+  `PLE_FEI` date NOT NULL,
+  `PLE_FEF` date NOT NULL,
+  `PLE_OBS` varchar(100) NOT NULL,
+  `DEP_IDE` varchar(15) NOT NULL,
+  `ENT_IDE` varchar(15) NOT NULL,
+  PRIMARY KEY (`PLE_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Volcar la base de datos para la tabla `planentrenamiento`
+--
+
+INSERT INTO `planentrenamiento` (`PLE_IDE`, `PLE_FEI`, `PLE_FEF`, `PLE_OBS`, `DEP_IDE`, `ENT_IDE`) VALUES
+(1, '2010-02-01', '2010-02-28', 'obeser', '93378156', ''),
+(2, '2010-02-03', '2010-02-19', 'sdfsdfa', '1110513015', '93138693'),
+(3, '2010-02-03', '2010-02-02', 'sdfdsf', '1110513015', '93138693'),
+(4, '2010-02-28', '2010-11-29', '', '1110476412', '93138693'),
+(5, '2010-02-27', '2010-08-27', '', '93378156', '93138693'),
+(6, '2010-03-08', '2010-05-08', '', '1110510448', '93378156'),
+(7, '2010-03-18', '2010-05-18', '', '123456', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `programa`
+--
+
+CREATE TABLE IF NOT EXISTS `programa` (
+  `PRO_IDE` int(4) NOT NULL AUTO_INCREMENT,
+  `PRO_NOM` varchar(50) NOT NULL,
+  `FAC_IDE` int(4) NOT NULL,
+  PRIMARY KEY (`PRO_IDE`),
+  KEY `FACULTAD_PROGRAMA` (`FAC_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+
+--
+-- Volcar la base de datos para la tabla `programa`
+--
+
+INSERT INTO `programa` (`PRO_IDE`, `PRO_NOM`, `FAC_IDE`) VALUES
+(1, 'INGENIERIA DE SISTEMAS', 1),
+(2, 'INGENIERIA ELECTRONICA', 1),
+(3, 'TECNOLOGIA ELECTRONICA', 1),
+(4, 'INGENIERIA MECANICA', 1),
+(5, 'INGENIERIA CIVIL', 1),
+(6, 'INGENIERIA INDUSTRIAL', 1),
+(7, 'ECONOMIA', 2),
+(8, 'MERCADEO', 2),
+(9, 'TECNOLOGIA EN MERCADEO Y VENTAS', 2),
+(10, 'ADMINISTRACION DE NEGOCIOS INTERNACIONALES', 2),
+(11, 'CONTADURIA PUBLICA', 2),
+(12, 'TECNOLOGIA EN CONTABILIDAD Y COSTOS', 2),
+(13, 'ADMINISTRACION FINANCIERA', 2),
+(14, 'DERECHO', 3),
+(15, 'TECN. EN INVEST.CRIMINALISTICA  Y JUDICIAL', 3),
+(16, 'PSICOLOGIA', 2),
+(17, 'FOLOSOFIA', 2),
+(18, 'COMUNICACION SOCIAL Y PERIODISMO', 2),
+(19, 'ARQUITECTURA', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipodeportista`
+--
+
+CREATE TABLE IF NOT EXISTS `tipodeportista` (
+  `TID_IDE` int(2) NOT NULL AUTO_INCREMENT,
+  `TID_NOM` varchar(30) NOT NULL,
+  PRIMARY KEY (`TID_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Volcar la base de datos para la tabla `tipodeportista`
+--
+
+INSERT INTO `tipodeportista` (`TID_IDE`, `TID_NOM`) VALUES
+(1, 'ESTUDIANTE  NUEVO'),
+(2, 'ESTUDIANTE ANTIGUO'),
+(3, 'DOCENTE PLANTA'),
+(4, 'DOCENTE MEDIO TIEMPO'),
+(5, 'PERSONAL ADMINISTRATIVO'),
+(6, 'EGRESADO'),
+(7, 'ESTUDIANTE  TECNICO SAN JOSE'),
+(8, 'ESTUDIANTE DE CONVENIO');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipomantenimiento`
+--
+
+CREATE TABLE IF NOT EXISTS `tipomantenimiento` (
+  `TIM_IDE` int(2) NOT NULL AUTO_INCREMENT,
+  `TIM_NOM` varchar(15) NOT NULL,
+  PRIMARY KEY (`TIM_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Volcar la base de datos para la tabla `tipomantenimiento`
+--
+
+INSERT INTO `tipomantenimiento` (`TIM_IDE`, `TIM_NOM`) VALUES
+(1, 'PREVENTIVO'),
+(2, 'CORRECTIVO'),
+(3, 'PREDICTIVO');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipomaquina`
+--
+
+CREATE TABLE IF NOT EXISTS `tipomaquina` (
+  `TIM_IDE` int(4) NOT NULL AUTO_INCREMENT,
+  `TIM_NOM` varchar(50) NOT NULL,
+  `TIM_DES` varchar(200) NOT NULL,
+  PRIMARY KEY (`TIM_IDE`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Volcar la base de datos para la tabla `tipomaquina`
+--
+
+INSERT INTO `tipomaquina` (`TIM_IDE`, `TIM_NOM`, `TIM_DES`) VALUES
+(1, 'LINEA CARDIOVASCULAR', 'Funcion Regulacion y Fortalecimiento de la Frecuencia Cardiaca'),
+(2, 'LINEA MULTIFUERZA', 'Funciones Fuerza, Resistencia y Potencia localizada del tren inferior'),
+(3, 'LINEA PIERNA', 'Fuerza y Resistencia del tren Superior'),
+(4, 'LINEA PECHO', 'Funciones fuerza,Resistencia y Potencia localizada en el Pectoral'),
+(5, 'LINEA HOMBROS', 'Funciones Fuerza, Resistencia y Potencia del Hombro'),
+(6, 'LINEA ABDOMEN', 'Funciones Fortalecimiento, Resistencia y Potencia de la Zona Baja y Alta del Abdomen. Hombro'),
+(7, 'LINEA SOPORTE', 'Accesorios, Multiples  Herramientas Para Dotacion del Gym');
